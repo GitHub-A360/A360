@@ -1,1 +1,1 @@
-{"path":"Automation Anywhere\\Bots\\Test\\CSVLoadTest","manualDependencies":[],"scannedDependencies":[]}
+{"path":"Automation Anywhere\\Bots\\Test\\CSVLoadTest","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\Test\\TestLoad.csv"]}
