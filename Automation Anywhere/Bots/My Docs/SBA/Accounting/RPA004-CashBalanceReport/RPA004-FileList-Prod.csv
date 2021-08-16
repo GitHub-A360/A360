@@ -1,0 +1,13 @@
+Filename,Directory,Formatter,Email
+PE_SBA_Cash_Private,\\sbafshare\Account\PRIVATE EQUITY_STRATEGIC\0_Cash Rec Reports,1.2.1.1,SBAFAccounting@sbafla.com
+RE_SBA_Cash_Private,\\sbafshare\Account\PRIVATE EQUITY_STRATEGIC\0_Cash Rec Reports,1.2.1.1,SBAFAccounting@sbafla.com
+SI_SBA_Cash_Private,\\sbafshare\Account\PRIVATE EQUITY_STRATEGIC\0_Cash Rec Reports,1.2.1.1,SBAFAccounting@sbafla.com
+16101_SBA_Cash_Public,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.1,AccountingPublicMarkets@sbafla.com
+SBA_Cash2_Public,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.1,AccountingPublicMarkets@sbafla.com
+SBA_Cash5_Public,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.1,AccountingPublicMarkets@sbafla.com
+SBA_Cash6_Public,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.1,AccountingPublicMarkets@sbafla.com
+DSFDOT_SBA_Cash_Comp,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.2,AccountingPublicMarkets@sbafla.com
+DSNE_SBA_Cash_Comp,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.2,AccountingPublicMarkets@sbafla.com
+DSE_SBA_Cash_Comp,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.2,AccountingPublicMarkets@sbafla.com
+Lottery_SBA_Cash_Comp,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.2,AccountingPublicMarkets@sbafla.com
+BOAGen_SBA_Cash_Comp,\\sbafshare\cashrecs\Daily Star RPA Files,1.2.1.2,AccountingPublicMarkets@sbafla.com
