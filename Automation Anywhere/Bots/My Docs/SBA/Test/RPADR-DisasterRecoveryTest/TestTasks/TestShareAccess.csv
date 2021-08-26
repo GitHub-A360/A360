@@ -1,0 +1,4 @@
+VariableName,VariableValue
+vInputDirectory,\\sbafshare\common\IA_Team\Ready for Bot\
+vOutputDirectory,\\sbafshare\common\IA_Team\Completed by Bot\
+vCopyFile,SBA_Cash.csv
