@@ -1,0 +1,396 @@
+REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
+vDevStageControlRoomURL,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,TBD,Contains Dev/Stage Control Room URL
+vProdControlRoomURL,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,TBD,Contains Prod Control Room URL
+vRecoveryControlRoomURL,TBD,TBD,TBD,Contains Prod Control Room URL
+vPrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,File name of input file containing primary asset ids retrieved from Oracle database
+vPrimaryAssetDataPullFilePathSessionName,PrimaryAssetDataPullFileSession,PrimaryAssetDataPullFileSession,PrimaryAssetDataPullFileSession,Excel Session for PrimaryAssetDataPullFileName
+vSecxTemplateFileName,SecXRefTemplate,SecXRefTemplate,SecXRefTemplate,File name of output template file where the primary asset ids are populated and loaded into Generic Batch Trade site 
+vSecxTemplateSessionName,SecXRefTemplateSession,SecXRefTemplateSession,SecXRefTemplateSession,Excel Session for SecxRefTemplate
+vSecxTemplateTabName,XREF,XREF,XREF,Tab name of SecxRefTemplate where primary asset ids are populated 
+vSiteGenericBatchTrade,https://tstapps.sbafla.com/genericbatchtrade,https://interchange.sbafla.com/genericbatchtrade,TBD,"URL of Generic Batch Trade, where SecxRefTemplate is verified and submitted "
+vGenericBatchTradeWindowTitle,Generic Batch Trade,Generic Batch Trade,Generic Batch Trade,Window Title of Generic Batch Trade site 
+vFileUploadWindowTitle,Open,Open,Open,Window Title of File explore window when Browse button is  clicked in Generic Batch Trade 
+vGenericBatchTradeSuccessMessage,No errors. Ready for submission.,No errors. Ready for submission.,No errors. Ready for submission.,Success message when verify is clicked after attaching SecxRefTemplate in Generic Batch Trade 
+vSecurityIDType,SBA_PAID,SBA_PAID,SBA_PAID,SecurityIDType value to be populated in SecxRefTemplate
+vSecurityXRefType,BNYM_ID,BNYM_ID,BNYM_ID,SecurityXRefType value to be populated in SecxRefTemplate
+vUserStarID,Bot,Bot,Bot,UserStarID value to be populated in SecxRefTemplate
+vOracleConnectionString,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSTST/PMSTST,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSPROD/PMSPROD,TBD,Oracle database string to retrieve primary asset id data 
+vSQLQuery,"SELECT distinct SECURITYDBO.SECURITY_MASTER.PRIMARY_ASSET_ID
+FROM (RULESDBO.ENTITY_CUSTODY_RELATIONSHIP 
+INNER JOIN (ESTAR.ESTAR_COST_POSITION
+INNER JOIN (SECURITYDBO.SECURITY_MASTER 
+LEFT JOIN XREF_BNYM_ID_RPA ON SECURITYDBO.SECURITY_MASTER.SECURITY_ALIAS = XREF_BNYM_ID_RPA.SECURITY_ALIAS)
+ON ESTAR.ESTAR_COST_POSITION.ASSET_ID = SECURITYDBO.SECURITY_MASTER.SECURITY_ALIAS)
+ON RULESDBO.ENTITY_CUSTODY_RELATIONSHIP.ENTITY_ID = ESTAR.ESTAR_COST_POSITION.PORTFOLIO_ACCT)
+INNER JOIN RULESDBO.ENTITY ON RULESDBO.ENTITY_CUSTODY_RELATIONSHIP.ENTITY_ID = RULESDBO.ENTITY.ENTITY_ID
+GROUP BY SECURITY_MASTER.PRIMARY_ASSET_ID,
+                ESTAR_COST_POSITION.PORTFOLIO_ACCT, 
+                ENTITY.ENTITY_NAME, 
+                SECURITY_MASTER.ISSUE_DESCRIPTION,
+                SECURITY_MASTER.MAT_DATE, 
+                SECURITY_MASTER.INVESTMENT_TYPE, 
+                XREF_BNYM_ID_RPA.XREF_SECURITY_ID, 
+                ESTAR_COST_POSITION.QTY, 
+                ENTITY_CUSTODY_RELATIONSHIP.CUSTODY_BANK_CODE,
+                ENTITY_CUSTODY_RELATIONSHIP.STATUS, 
+                SECURITY_MASTER.EXCHANGE, 
+                SECURITY_MASTER.PROCESS_SEC_TYPE, 
+                SECURITY_MASTER.SECURITY_ALIAS,
+                SECURITY_MASTER.SECURITY_TYPE, 
+                SECURITY_MASTER.NRA_TAX_COUNTRY
+HAVING (((ESTAR_COST_POSITION.PORTFOLIO_ACCT)<>'PERP' And (ESTAR_COST_POSITION.PORTFOLIO_ACCT)<>'CRINDEX') 
+              AND ((SECURITY_MASTER.ISSUE_DESCRIPTION) Not Like '*PLACEHOLDER*') 
+              AND ((SECURITY_MASTER.INVESTMENT_TYPE)='ST' Or (SECURITY_MASTER.INVESTMENT_TYPE)='FI') 
+              AND ((XREF_BNYM_ID_RPA.XREF_SECURITY_ID) Is Null) AND (ESTAR_COST_POSITION.QTY)<>'0') 
+              AND ((ENTITY_CUSTODY_RELATIONSHIP.CUSTODY_BANK_CODE)='MELLON') 
+              AND ((ENTITY_CUSTODY_RELATIONSHIP.STATUS)='Y') 
+              AND ((SECURITY_MASTER.SECURITY_TYPE)<>'REPO' 
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1470'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1410'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1460'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1610' 
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1611') 
+              AND ((SECURITY_MASTER.NRA_TAX_COUNTRY)='US')
+ORDER BY SECURITY_MASTER.PRIMARY_ASSET_ID
+","SELECT distinct SECURITYDBO.SECURITY_MASTER.PRIMARY_ASSET_ID
+FROM (RULESDBO.ENTITY_CUSTODY_RELATIONSHIP 
+INNER JOIN (ESTAR.ESTAR_COST_POSITION
+INNER JOIN (SECURITYDBO.SECURITY_MASTER 
+LEFT JOIN XREF_BNYM_ID_RPA ON SECURITYDBO.SECURITY_MASTER.SECURITY_ALIAS = XREF_BNYM_ID_RPA.SECURITY_ALIAS)
+ON ESTAR.ESTAR_COST_POSITION.ASSET_ID = SECURITYDBO.SECURITY_MASTER.SECURITY_ALIAS)
+ON RULESDBO.ENTITY_CUSTODY_RELATIONSHIP.ENTITY_ID = ESTAR.ESTAR_COST_POSITION.PORTFOLIO_ACCT)
+INNER JOIN RULESDBO.ENTITY ON RULESDBO.ENTITY_CUSTODY_RELATIONSHIP.ENTITY_ID = RULESDBO.ENTITY.ENTITY_ID
+GROUP BY SECURITY_MASTER.PRIMARY_ASSET_ID,
+                ESTAR_COST_POSITION.PORTFOLIO_ACCT, 
+                ENTITY.ENTITY_NAME, 
+                SECURITY_MASTER.ISSUE_DESCRIPTION,
+                SECURITY_MASTER.MAT_DATE, 
+                SECURITY_MASTER.INVESTMENT_TYPE, 
+                XREF_BNYM_ID_RPA.XREF_SECURITY_ID, 
+                ESTAR_COST_POSITION.QTY, 
+                ENTITY_CUSTODY_RELATIONSHIP.CUSTODY_BANK_CODE,
+                ENTITY_CUSTODY_RELATIONSHIP.STATUS, 
+                SECURITY_MASTER.EXCHANGE, 
+                SECURITY_MASTER.PROCESS_SEC_TYPE, 
+                SECURITY_MASTER.SECURITY_ALIAS,
+                SECURITY_MASTER.SECURITY_TYPE, 
+                SECURITY_MASTER.NRA_TAX_COUNTRY
+HAVING (((ESTAR_COST_POSITION.PORTFOLIO_ACCT)<>'PERP' And (ESTAR_COST_POSITION.PORTFOLIO_ACCT)<>'CRINDEX') 
+              AND ((SECURITY_MASTER.ISSUE_DESCRIPTION) Not Like '*PLACEHOLDER*') 
+              AND ((SECURITY_MASTER.INVESTMENT_TYPE)='ST' Or (SECURITY_MASTER.INVESTMENT_TYPE)='FI') 
+              AND ((XREF_BNYM_ID_RPA.XREF_SECURITY_ID) Is Null) AND (ESTAR_COST_POSITION.QTY)<>'0') 
+              AND ((ENTITY_CUSTODY_RELATIONSHIP.CUSTODY_BANK_CODE)='MELLON') 
+              AND ((ENTITY_CUSTODY_RELATIONSHIP.STATUS)='Y') 
+              AND ((SECURITY_MASTER.SECURITY_TYPE)<>'REPO' 
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1470'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1410'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1460'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1610' 
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1611') 
+              AND ((SECURITY_MASTER.NRA_TAX_COUNTRY)='US')
+ORDER BY SECURITY_MASTER.PRIMARY_ASSET_ID
+","SELECT distinct SECURITYDBO.SECURITY_MASTER.PRIMARY_ASSET_ID
+FROM (RULESDBO.ENTITY_CUSTODY_RELATIONSHIP 
+INNER JOIN (ESTAR.ESTAR_COST_POSITION
+INNER JOIN (SECURITYDBO.SECURITY_MASTER 
+LEFT JOIN XREF_BNYM_ID_RPA ON SECURITYDBO.SECURITY_MASTER.SECURITY_ALIAS = XREF_BNYM_ID_RPA.SECURITY_ALIAS)
+ON ESTAR.ESTAR_COST_POSITION.ASSET_ID = SECURITYDBO.SECURITY_MASTER.SECURITY_ALIAS)
+ON RULESDBO.ENTITY_CUSTODY_RELATIONSHIP.ENTITY_ID = ESTAR.ESTAR_COST_POSITION.PORTFOLIO_ACCT)
+INNER JOIN RULESDBO.ENTITY ON RULESDBO.ENTITY_CUSTODY_RELATIONSHIP.ENTITY_ID = RULESDBO.ENTITY.ENTITY_ID
+GROUP BY SECURITY_MASTER.PRIMARY_ASSET_ID,
+                ESTAR_COST_POSITION.PORTFOLIO_ACCT, 
+                ENTITY.ENTITY_NAME, 
+                SECURITY_MASTER.ISSUE_DESCRIPTION,
+                SECURITY_MASTER.MAT_DATE, 
+                SECURITY_MASTER.INVESTMENT_TYPE, 
+                XREF_BNYM_ID_RPA.XREF_SECURITY_ID, 
+                ESTAR_COST_POSITION.QTY, 
+                ENTITY_CUSTODY_RELATIONSHIP.CUSTODY_BANK_CODE,
+                ENTITY_CUSTODY_RELATIONSHIP.STATUS, 
+                SECURITY_MASTER.EXCHANGE, 
+                SECURITY_MASTER.PROCESS_SEC_TYPE, 
+                SECURITY_MASTER.SECURITY_ALIAS,
+                SECURITY_MASTER.SECURITY_TYPE, 
+                SECURITY_MASTER.NRA_TAX_COUNTRY
+HAVING (((ESTAR_COST_POSITION.PORTFOLIO_ACCT)<>'PERP' And (ESTAR_COST_POSITION.PORTFOLIO_ACCT)<>'CRINDEX') 
+              AND ((SECURITY_MASTER.ISSUE_DESCRIPTION) Not Like '*PLACEHOLDER*') 
+              AND ((SECURITY_MASTER.INVESTMENT_TYPE)='ST' Or (SECURITY_MASTER.INVESTMENT_TYPE)='FI') 
+              AND ((XREF_BNYM_ID_RPA.XREF_SECURITY_ID) Is Null) AND (ESTAR_COST_POSITION.QTY)<>'0') 
+              AND ((ENTITY_CUSTODY_RELATIONSHIP.CUSTODY_BANK_CODE)='MELLON') 
+              AND ((ENTITY_CUSTODY_RELATIONSHIP.STATUS)='Y') 
+              AND ((SECURITY_MASTER.SECURITY_TYPE)<>'REPO' 
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1470'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1410'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1460'
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1610' 
+              And (SECURITY_MASTER.SECURITY_TYPE)<>'1611') 
+              AND ((SECURITY_MASTER.NRA_TAX_COUNTRY)='US')
+ORDER BY SECURITY_MASTER.PRIMARY_ASSET_ID
+",Query to pull primary asset ids 
+vOracleSessionName,OracleSessionName,OracleSessionName,OracleSessionName,Oracle session name
+vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa_prod,\\sbafshare\RPA,Network shared Drive URL
+vCurrentEnvironment,DEV,PROD,TBD,Current bot environment 
+vProcessName,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,Name of process file in shared drive 
+vGBTErrorScreenshotName,GBTValidationError,GBTValidationError,GBTValidationError,Name of screenshot file when SecxRefTemplate does not pass verification in Generic Batch Trade
+vDevappsWindowTitle,tstapps,interchange,TBD,Window title of screenshot link in Generic Batch Trade 
+vEmailToAccounting,adam.lohne@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,Exceptions email list
+vEmailToRpaSupport,adam.lohne@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,Exceptions email list
+vEmailFrom,donotreply_SBA_BNYMid_bot@sbafla.com,donotreply_SBA_BNYMid_bot@sbafla.com,donotreply_SBA_BNYMid_bot@sbafla.com,Bot Sender Email
+vSuccessProcessCompleteEmail,"The BNYM ID Mapping process is complete 
+
+Directory Path for submitted SecxRefTemplate : *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*","The BNYM ID Mapping process is complete 
+
+Directory Path for submitted SecxRefTemplate : *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*","The BNYM ID Mapping process is complete 
+
+Directory Path for submitted SecxRefTemplate : *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*",Notification Email of bot completion 
+vExceptionEmailNetworkDrive,"Hello, 
+
+Error: Bot unable to access Shared Drive
+
+The BNYM ID Mapping bot was not completed successfully as the required network drive could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Directory Path: *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Hello, 
+
+Error: Bot unable to access Shared Drive
+
+The BNYM ID Mapping bot was not completed successfully as the required network drive could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Directory Path: *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Hello, 
+
+Error: Bot unable to access Shared Drive
+
+The BNYM ID Mapping bot was not completed successfully as the required network drive could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Directory Path: *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+",Exception notification email when Network Shared Drive is inaccessible 
+vExceptionEmailSecxInaccessible,"Hello, 
+
+Error: Bot unable to access SecXRefTemplate.xls
+
+The BNYM ID Mapping bot was not completed successfully as the required template file could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Directory Path: *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+","Hello, 
+
+Error: Bot unable to access SecXRefTemplate.xls
+
+The BNYM ID Mapping bot was not completed successfully as the required template file could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Directory Path: *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+","Hello, 
+
+Error: Bot unable to access SecXRefTemplate.xls
+
+The BNYM ID Mapping bot was not completed successfully as the required template file could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Directory Path: *<network_directory>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+",Exception notification email when SecxRefTemplate is inaccessible 
+vExceptionEmailOracleInaccesible,"Hello, 
+
+Error: Bot unable to access Oracle (Eagle) database
+
+The BNYM ID Mapping bot was not completed successfully as the Oracle database could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Database name: *<database_name>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Hello, 
+
+Error: Bot unable to access Oracle (Eagle) database
+
+The BNYM ID Mapping bot was not completed successfully as the Oracle database could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Database name: *<database_name>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Hello, 
+
+Error: Bot unable to access Oracle (Eagle) database
+
+The BNYM ID Mapping bot was not completed successfully as the Oracle database could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Database name: *<database_name>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Exception notification email when Oracle database is inaccessible, or failure in sql statement"
+vExceptionEmailNoDataPulled,"Hello, 
+
+No data returned from Oracle (Eagle) query
+
+The BNYM ID Mapping bot was not completed successfully as no results were returned from Oracle query.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+","Hello, 
+
+No data returned from Oracle (Eagle) query
+
+The BNYM ID Mapping bot was not completed successfully as no results were returned from Oracle query.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+","Hello, 
+
+No data returned from Oracle (Eagle) query
+
+The BNYM ID Mapping bot was not completed successfully as no results were returned from Oracle query.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+",Exception notification email when PrimaryAssetDataPullFileName is inaccessible or returns zero values in file 
+vExceptionEmailGBTInaccesible,"Hello,
+
+RPA Process BNYM_ID Mapping. Cannot connect to Generic Batch Trade. Process ended.
+
+Error: Bot unable to access Generic Batch Trade
+
+The BNYM ID Mapping bot was not completed successfully as the required site could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+URL Path: *<url_path>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Hello,
+
+RPA Process BNYM_ID Mapping. Cannot connect to Generic Batch Trade. Process ended.
+
+Error: Bot unable to access Generic Batch Trade
+
+The BNYM ID Mapping bot was not completed successfully as the required site could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+URL Path: *<url_path>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+","Hello,
+
+RPA Process BNYM_ID Mapping. Cannot connect to Generic Batch Trade. Process ended.
+
+Error: Bot unable to access Generic Batch Trade
+
+The BNYM ID Mapping bot was not completed successfully as the required site could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+URL Path: *<url_path>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+
+",Exception notification  when Generic Batch Trade site is inaccessible 
+vExceptionEmailGBTVerificationFailure,"Hello, 
+
+Error: Generic Batch Trade verification failed
+
+The BNYM ID Mapping bot was not completed successfully as the Generic Batch Trade validation encountered errors. Attached are the original input file and the verification errors.
+Please correct errors and process file manually.
+
+
+Original upload file: SecXRefTemplate.xls
+Verification error file: *<verification_error_filename>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+","Hello, 
+
+Error: Generic Batch Trade verification failed
+
+The BNYM ID Mapping bot was not completed successfully as the Generic Batch Trade validation encountered errors. Attached are the original input file and the verification errors.
+Please correct errors and process file manually.
+
+
+Original upload file: SecXRefTemplate.xls
+Verification error file: *<verification_error_filename>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+","Hello, 
+
+Error: Generic Batch Trade verification failed
+
+The BNYM ID Mapping bot was not completed successfully as the Generic Batch Trade validation encountered errors. Attached are the original input file and the verification errors.
+Please correct errors and process file manually.
+
+
+Original upload file: SecXRefTemplate.xls
+Verification error file: *<verification_error_filename>*
+
+Date and time: *<Date / timestamp>*
+Username: *<Username>*
+",Exception notification email when Verification of the uploaded SecxRefTemplate in the Generic Batch Trade site fails 
+vEmailSubjectProcessCompleteEmail,BNYM ID Mapping - Bot completion ,BNYM ID Mapping - Bot completion ,BNYM ID Mapping - Bot completion ,Email Subject of bot completion 
+vEmailSubjectNetworkDrive,BNYM ID Mapping - Error: Bot unable to access Shared Drive,BNYM ID Mapping - Error: Bot unable to access Shared Drive,BNYM ID Mapping - Error: Bot unable to access Shared Drive,Email Subject when Network Shared Drive is inaccessible 
+vEmailSubjectSecxInaccessible,BNYM ID Mapping - Error: Bot unable to access SecXRefTemplate.xls,BNYM ID Mapping - Error: Bot unable to access SecXRefTemplate.xls,BNYM ID Mapping - Error: Bot unable to access SecXRefTemplate.xls,Email Subject when SecxRefTemplate is inaccessible 
+vEmailSubjectOracleInaccesible,BNYM ID Mapping - Error: Bot unable to access Eagle database,BNYM ID Mapping - Error: Bot unable to access Eagle database,BNYM ID Mapping - Error: Bot unable to access Eagle database,"Email Subject when Oracle database is inaccessible, or failure in sql statement"
+vEmailSubjectNoDataPulled,BNYM ID Mapping - No results from Eagle query,BNYM ID Mapping - No results from Eagle query,BNYM ID Mapping - No results from Eagle query,Email Subject  when PrimaryAssetDataPullFileName is inaccessible or returns zero values in file 
+vEmailSubjectGBTInaccesible,BNYM ID Mapping - Error: Bot unable to access Generic Batch Trade,BNYM ID Mapping - Error: Bot unable to access Generic Batch Trade,BNYM ID Mapping - Error: Bot unable to access Generic Batch Trade,Email Subject  when Generic Batch Trade site is inaccessible 
+vEmailSubjectGBTVerificationFailure,BNYM ID Mapping - Error: Generic Batch Trade Verification errors,BNYM ID Mapping - Error: Generic Batch Trade Verification errors,BNYM ID Mapping - Error: Generic Batch Trade Verification errors,Success message when Submitted button  is clicked after successfully verifying SecxRefTemplate in Generic Batch Trade 
+vGenericBatchTradeSuccessSubmitMessage,File submitted successfully.,File submitted successfully.,File submitted successfully.,
