@@ -1,7 +1,7 @@
 TestList,sbarpabc1,sbarpabc2,sbarpabc3,sbarpaaccprd1,sbarpafinprd1,sbarparmcprd1,sbarpaacctst1,sbarpafintst1
 TestBrowserExternal,1,1,1,1,1,1,1,1
 TestBrowserInternal,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv
-TestBrowserInternal,0,DevGBCBrowserInternal.csv,0,0,ProdGBCBrowserInternal.csv,0,0,0
+TestBrowserInternal,DevGBCBrowserInternal.csv,DevGBCBrowserInternal.csv,0,0,ProdGBCBrowserInternal.csv,0,0,0
 TestShareAccess,TestShareAccess.csv,TestShareAccess.csv,TestShareAccess.csv,TestShareAccess.csv,TestShareAccess.csv,TestShareAccess.csv,TestShareAccess.csv,TestShareAccess.csv
 TestEmailOut,TestEmailOut.csv,TestEmailOut.csv,TestEmailOut.csv,TestEmailOut.csv,TestEmailOut.csv,TestEmailOut.csv,TestEmailOut.csv,TestEmailOut.csv
 TestEmailMailbox,TestEmailMailbox.csv,TestEmailMailbox.csv,TestEmailMailbox.csv,TestEmailMailbox.csv,TestEmailMailbox.csv,TestEmailMailbox.csv,TestEmailMailbox.csv,TestEmailMailbox.csv
