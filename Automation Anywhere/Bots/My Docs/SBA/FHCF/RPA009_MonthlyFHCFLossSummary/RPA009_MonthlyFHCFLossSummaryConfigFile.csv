@@ -1,0 +1,15 @@
+REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
+vDevStageControlRoomURL,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,Contains Dev/Stage Control Room URL
+vProdControlRoomURL,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,Contains Prod Control Room URL
+vRecoveryControlRoomURL,TBD,TBD,TBD,Contains DR Control Room URL
+vCurrentEnvironment,DEV,PROD,PROD,
+vProcessName,RPA009,RPA009,RPA009,
+vEmailFrom,donotreply_RPA009_bot@sbafla.com,donotreply_RPA009_bot@sbafla.com,donotreply_RPA009_bot@sbafla.com,
+vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa_prod,\\sbafshare\RPA\Recovery,
+vRPASupportEmail,"jason.verschage@sbafla.com,jane.zody@sbafla.com",RPASupport@sbafla.com,RPASupport@sbafla.com,
+vIMAPserver,mail.sbafla.com,mail.sbafla.com,mail.sbafla.com,
+vTargetEmail,FHCF Loss Summary,FHCF Loss Summary,FHCF Loss Summary,
+vEmailDestination,\\sbafshare\RPA\Dev\RPA009\Email,\\sbafshare\fhcf\losses\Paragon Monthly Loss Summaries,\\sbafshare\fhcf\losses\Paragon Monthly Loss Summaries,
+vProcessEmail,adam.lohne@sbafla.com,FHCF_LossData@sbafla.com,FHCF_LossData@sbafla.com,
+vFinalLossDirectory,\\sbafshare\rpa\DEV\RPA009_Standalone\Input,\\sbafshare\fhcf\losses,\\sbafshare\fhcf\losses,
+vFinalLossFilename,FHCF LOSS Summary.xlsx,FHCF LOSS Summary.xlsx,FHCF LOSS Summary.xlsx,
