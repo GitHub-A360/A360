@@ -1,5 +1,5 @@
 REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
-vDevStageControlRoomURL,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,Contains Dev/Stage Control Room URL
+vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,Contains Dev/Stage Control Room URL
 vProdControlRoomURL,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,Contains Prod Control Room URL
 vRecoveryControlRoomURL,TBD,TBD,TBD,Contains DR Control Room URL
 vCurrentEnvironment,DEV,PROD,PROD,
@@ -16,5 +16,5 @@ vComPrimeTransFileName,COM_PRIME_Trans_,COM_PRIME_Trans_,COM_PRIME_Trans_,
 vAmortizedCostFolderPath,\\sbafshare\liveapps\BlackrockAladdin\AmortizedCost,\\sbafshare\liveapps\BlackrockAladdin\AmortizedCost,\\sbafshare\liveapps\BlackrockAladdin\AmortizedCost,
 vAmortizedCostFileName,cdf_SBA_YYYYMMDD.csv,cdf_SBA_YYYYMMDD.csv,cdf_SBA_YYYYMMDD.csv,
 vTargetEmailSubject,SB_FLPRIM: Daily Green Package Released,SB_FLPRIM: Daily Green Package Released,SB_FLPRIM: Daily Green Package Released,
-vTestDate,5/13/2021,5/13/2021,5/13/2021,
+vTestDate,9/14/2021,5/13/2021,5/13/2021,
 vProcessEmail,"Adam.Lohne@sbafla.com,Jane.Zody@sbafla.com,Carolyn.Walker@sbafla.com,Jason.Verschage@sbafla.com",PublicMarketCompliance@sbafla.com,PublicMarketCompliance@sbafla.com,
