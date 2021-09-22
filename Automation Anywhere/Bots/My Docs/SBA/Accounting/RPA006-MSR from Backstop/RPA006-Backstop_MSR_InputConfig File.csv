@@ -1,5 +1,5 @@
 VARIABLE NAMES,DEV / STAGE VALUES,PRODUCTION VALUES,DISASTER RECOVERY VALUES,DESCRIPTION
-vDevStageControlRoomURL,https://sbarpadev.fsba.loc,NA,NA,Contains Dev/Stage Control Room URL
+vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/,NA,NA,Contains Dev/Stage Control Room URL
 vProdControlRoomURL,https://sbarpaprd.fsba.loc,NA,NA,Contains Prod Control Room URL
 vRecoveryControlRoomURL,NA,NA,NA,Contains Prod Control Room URL
 vReadyForBotFolder,\\sbafshare\RPA\DEV\Backstop\Process Shared Drive\MgrStmts\Ready for Bot,\\sbafshare\account\PRIVATE EQUITY_STRATEGIC\RPA\Mgr Stmts\Ready for Bot,\\sbafshare\account\PRIVATE EQUITY_STRATEGIC\RPA\Mgr Stmts\Ready for Bot,Input folder path for bot containing PDFs that needs to be processed
@@ -19,8 +19,8 @@ vCurrentEnvironment,DEV,PROD,PROD,Environment variable value used in folder dire
 vProcessName,RPA006,RPA006,RPA006,Process name
 vProcessCutOffTime,16:30:00 PM,16:30:00 PM,16:30:00 PM,Process cut off time after which summary completion emails will be sent (every run)
 vEmailFrom,donotreply_SBA_BackstopMSR_bot@sbafla.com,donotreply_SBA_BackstopMSR_bot@sbafla.com,donotreply_SBA_BackstopMSR_bot@sbafla.com,"Dummy email address for the Bot's ""From""field"
-vEmailToBusiness,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com
-vEmailToRPASupport,RPASupport@sbafla.com,RPASupport@sbafla.com;,RPASupport@sbafla.com,RPA Support inbox for technical exception notifications
+vEmailToBusiness,jason.verschage@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com
+vEmailToRPASupport,jason.verschage@sbafla.com,RPASupport@sbafla.com;,RPASupport@sbafla.com,RPA Support inbox for technical exception notifications
 vExceptionEmailNetworkDrive,"Hello, 
 
 Error: Bot unable to access Shared Drive
