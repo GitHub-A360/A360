@@ -8,7 +8,7 @@ vEmailFrom,donotreply_Aladdin_Reports_bot@sbafla.com,donotreply_Aladdin_Reports_
 vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa_prod,\\sbafshare\RPA\Recovery,
 vTargetEmailSubject,Daily Green Package,Daily Green Package,Daily Green Package,
 vRPASupportEmail,"jason.verschage@sbafla.com",RPASupport@sbafla.com,RPASupport@sbafla.com,
-vProcessEmail,"jason.verschage@sbafla.com",PublicMarketCompliance@sbafla.com,PublicMarketCompliance@sbafla.com,
+vProcessEmail,"jason.verschage@sbafla.com;jane.zody@sbafla.com;adam.lohne@sbafla.com;carolyn.walker@sbafla.com",PublicMarketCompliance@sbafla.com,PublicMarketCompliance@sbafla.com,
 vIMAPserver,mail.sbafla.com,mail.sbafla.com,mail.sbafla.com,
 vBlackrockUsername,sbjzody,sbjzody,TBD,
 vBlackrockPassword,RPAAladdin6!,RPAAladdin6!,RPAAladdin6!,
