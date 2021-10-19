@@ -1,0 +1,309 @@
+REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
+vDevStageControlRoomURL,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,,Contains Dev/Stage Control Room URL
+vProdControlRoomURL,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,,Contains Prod Control Room URL
+vRecoveryControlRoomURL,TBD,TBD,,Contains DR Control Room URL
+vCurrentEnvironment,DEV,PROD,,
+vProcessName,SBARPA 003 - Posting Instructions to Eagle,SBARPA 003 - Posting Instructions to Eagle,,
+vBotID,Bot,Bot,,
+vEmailFrom,donotreply_SBA_PI_to_Eagle_bot@sbafla.com,donotreply_SBA_PI_to_Eagle_bot@sbafla.com,,
+vGenericBatchTradeURL,https://tstapps.sbafla.com/genericbatchtrade/,https://interchange.sbafla.com/genericbatchtrade,,
+vGenericBatchTradeWindowTitle,*Generic Batch Trade*,*Generic Batch Trade*,,
+vGenericBatchTradeSuccessSubmitMessage,File submitted successfully.,File submitted successfully.,,
+vGenericBatchTradeWarningMessage,warning(s),warning(s),,
+vGenericBatchTradeSuccessMessage,No errors. Ready for submission.,No errors. Ready for submission.,,
+vFileUploadWindowTitle,Choose File to Upload,Choose File to Upload,,
+vGBTretryTimes,2,2,,
+vGBTretryDelaySeconds,5,300,,
+vOracleConnectionString,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSTST/PMSTST,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSPROD/PMSPROD,,
+vCurrencyCodeStoredProcedureName,SB_RPA_GET_CURRENCY_CODE,SB_RPA_GET_CURRENCY_CODE,,
+vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa_prod,,
+vWorkingFolder,Eagle Process Working Folder,Eagle Process Working Folder,,
+vTemporaryFolder,Eagle Process Temporary Folder,Eagle Process Temporary Folder,,
+vCashAssetSpecificBatchTemplateFilename,CashAssetSpecificBatchTemplate.xls,CashAssetSpecificBatchTemplate.xls,,
+vCashBatchTemplateFilename,CashBatchTemplate.xls,CashBatchTemplate.xls,,
+vEquityBatchTemplateFilename,EquityBatchTemplate.xls,EquityBatchTemplate.xls,,
+vTargetEmailSubject,"Private Asset Class (PE, SI, RE) Posting Instructions","Private Asset Class (PE, SI, RE) Posting Instructions",,
+vIMAPserver,mail.sbafla.com,mail.sbafla.com,,
+vRPAsupportEmail,adam.lohne@sbafla.com,RPASupport@sbafla.com,,
+vSupportEmail,adam.lohne@sbafla.com,Support_DL@sbafla.com,,
+vProcessEmail,adam.lohne@sbafla.com,FinOps2@sbafla.com,,
+vInvalidAttachmentArchiveName,Out of Scope Files.zip,Out of Scope Files.zip,,
+vTransactionTypeHeaderName,Transaction Type,Transaction Type,,
+vMgrFeeHeaderName,Mgr Fee Ticker,Mgr Fee Ticker,,
+vTDSDHeaderName,TD & SD,TD & SD,,
+vAmountHeaderName,Amount,Amount,,
+vSTARtickerHeaderName,STAR Ticker,STAR Ticker,,
+vInvalidAttachmentExceptionSubject,Posting Instructions to Eagle - Error: Excel file name incorrect or out of scope attachments,Posting Instructions to Eagle - Error: Excel file name incorrect or out of scope attachments,,
+vInvalidAttachmentExceptionBody,"Hello, 
+
+Error: Excel file name incorrect
+
+The Posting Instructions to Eagle bot was unable to process the attached file(s).  Either they do not follow the naming convention or are not Excel files.  Any valid input files will be processed.
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Excel file name incorrect
+
+The Posting Instructions to Eagle bot was unable to process the attached file(s).  Either they do not follow the naming convention or are not Excel files.  Any valid input files will be processed.
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vDuplicateEmailExceptionSubject,Posting Instructions to Eagle - Error: Duplicate email,Posting Instructions to Eagle - Error: Duplicate email,,
+vDuplicateEmailExceptionBody,"Hello, 
+
+Error: Duplicate email
+
+The Posting Instructions to Eagle bot was not completed successfully as there was a duplicate email to FinOps2@sbafla.com for posting instructions to Eagle. No attachments have been processed.  Please resolve manually.
+
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Duplicate email
+
+The Posting Instructions to Eagle bot was not completed successfully as there was a duplicate email to FinOps2@sbafla.com for posting instructions to Eagle. No attachments have been processed.  Please resolve manually.
+
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vTemplateTypeExceptionSubject,Posting Instructions to Eagle - Info: Attachment with invalid rows found,Posting Instructions to Eagle - Info: Attachment with invalid rows found,,
+vTemplateTypeExceptionBody,"Hello, 
+
+Info: Invalid row in Excel file
+
+The Posting Instructions to Eagle bot did not process one or more rows in the attached Excel file, as they did not match a rule to write to a template. Valid rows have been processed.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Info: Invalid row in Excel file
+
+The Posting Instructions to Eagle bot did not process one or more rows in the attached Excel file, as they did not match a rule to write to a template. Valid rows have been processed.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vNoPItabExceptionSubject,Posting Instructions to Eagle - Error: Missing PI tab in Excel file,Posting Instructions to Eagle - Error: Missing PI tab in Excel file,,
+vNoPItabExceptionBody,"Hello, 
+
+Error: Missing PI tab in Excel file
+
+The Posting Instructions to Eagle bot did not process the attached Excel file as it did not include a PI tab. 
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Missing PI tab in Excel file
+
+The Posting Instructions to Eagle bot did not process the attached Excel file as it did not include a PI tab. 
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vTemplateNotFoundSubject,Posting Instructions to Eagle - Error: Bot unable to find all required templates,Posting Instructions to Eagle - Error: Bot unable to find all required templates,,
+vTemplateNotFoundBody,"Hello, 
+
+Error: Bot unable to find all required templates
+
+The Posting Instructions to Eagle bot was not completed successfully as all required templates were not found in the shared drive.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+The following templates are missing:
+<Missing_templates>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Bot unable to find all required templates
+
+The Posting Instructions to Eagle bot was not completed successfully as all required templates were not found in the shared drive.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+The following templates are missing:
+<Missing_templates>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vIMAPfailedSubject,Posting Instructions to Eagle - Error: Unable to connect to the email server,Posting Instructions to Eagle - Error: Unable to connect to the email server,,
+vIMAPfailedBody,"Hello, 
+
+Error: Bot unable to access email
+
+The Posting Instructions to Eagle bot was not completed successfully as it could not connect to email over IMAP.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Bot unable to access email
+
+The Posting Instructions to Eagle bot was not completed successfully as it could not connect to email over IMAP.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vNoEmailSubject,Posting Instructions to Eagle - Info: No unread email found in the inbox,Posting Instructions to Eagle - Info: No unread email found in the inbox,,
+vNoEmaiBody,"Hello, 
+
+Info: No email found to process
+
+The Posting Instructions to Eagle bot did not find any email to process and is shutting down.
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Info: No email found to process
+
+The Posting Instructions to Eagle bot did not find any email to process and is shutting down.
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vRequiredColumnMissingSubject,Posting Instructions to Eagle - Error: Required column missing in attachment,Posting Instructions to Eagle - Error: Required column missing in attachment,,
+vRequiredColumnMissingBody,"Hello, 
+
+Error: Required column missing in attachment
+
+The Posting Instructions to Eagle bot did not process the attached Excel file, as it was missing a required column.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Required column missing in attachment
+
+The Posting Instructions to Eagle bot did not process the attached Excel file, as it was missing a required column.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vOracleErrorSubject,Posting Instructions to Eagle - Error: Unable to retrieve currency code from Oracle,Posting Instructions to Eagle - Error: Unable to retrieve currency code from Oracle,,
+vOracleErrorBody,"Hello, 
+
+Error: Unable to retrieve currency code from Oracle
+
+The Posting Instructions to Eagle bot did not complete successfully for the attached file, as there was an error when retrieving a currency code from Oracle. Any rows that could be successfully processed were completed. Errors are logged in the audit and error logs. Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Unable to retrieve currency code from Oracle
+
+The Posting Instructions to Eagle bot did not complete successfully for the attached file, as there was an error when retrieving a currency code from Oracle. Any rows that could be successfully processed were completed. Errors are logged in the audit and error logs. Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vGBTloginFailureSubject,Posting Instructions to Eagle - Error: Bot unable to access Generic Batch Trade,Posting Instructions to Eagle - Error: Bot unable to access Generic Batch Trade,,
+vGBTloginFailureBody,"Hello, 
+
+Error: Bot unable to access Generic Batch Trade
+
+The Posting Instructions to Eagle bot was not completed successfully as the Generic Batch Trade could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+URL: <Generic Batch Trade URL>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Bot unable to access Generic Batch Trade
+
+The Posting Instructions to Eagle bot was not completed successfully as the Generic Batch Trade could not be accessed.
+Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
+
+
+URL: <Generic Batch Trade URL>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vGBTverifyFailedSubject,Posting Instructions to Eagle - Error: Generic Batch Trade verification failure,Posting Instructions to Eagle - Error: Generic Batch Trade verification failure,,
+vGBTverifyFailedBody,"Hello, 
+
+Error: Generic Batch Trade verification failure
+
+The Posting Instructions to Eagle bot was not completed successfully as there was a Generic Batch Trade verification failure. The file may be reviewed in the directory below. File will need to be reviewed for errors and processed manually.
+
+
+File name: <Excel file name>
+Output directory: <network_directory>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Generic Batch Trade verification failure
+
+The Posting Instructions to Eagle bot was not completed successfully as there was a Generic Batch Trade verification failure. The file may be reviewed in the directory below. File will need to be reviewed for errors and processed manually.
+
+
+File name: <Excel file name>
+Output directory: <network_directory>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vGBTVerifyWarningSubject,Posting Instructions to Eagle - Info: Generic Batch Trade verification warnings found,Posting Instructions to Eagle - Info: Generic Batch Trade verification warnings found,,
+vGBTVerifyWarningBody,"Hello, 
+
+Info: Generic Batch Trade verification warnings found
+
+The Posting Instructions to Eagle bot recieved a warning when submitting the attached file to Generic Batch Trade. The automation will attempt to submit the template. Please review the attached file to make sure the data is correct.
+
+
+File name: <Excel file name>
+Output directory: <network_directory>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Info: Generic Batch Trade verification warnings found
+
+The Posting Instructions to Eagle bot recieved a warning when submitting the attached file to Generic Batch Trade. The automation will continue to attempt to submit the template. Please review the attached file to make sure the data is correct.
+
+
+File name: <Excel file name>
+Output directory: <network_directory>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
+vGBTsubmitSubject,Posting Instructions to Eagle - Error: Generic Batch Trade submission failure,Posting Instructions to Eagle - Error: Generic Batch Trade submission failure,,
+vGBTsubmitBody,"Hello, 
+
+Error: Generic Batch Trade submission failure
+
+The Posting Instructions to Eagle bot was not completed successfully as there was a Generic Batch Trade submission failure. The file is attached for your reference. Please process file manually.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>","Hello, 
+
+Error: Generic Batch Trade submission failure
+
+The Posting Instructions to Eagle bot was not completed successfully as there was a Generic Batch Trade submission failure. The file is attached for your reference. Please process file manually.
+
+
+File name: <Excel file name>
+
+Date and time: <Date / timestamp>
+Username: <Username>",,
