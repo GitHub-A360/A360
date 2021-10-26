@@ -1,5 +1,5 @@
 REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
-vDevStageControlRoomURL,https://sbarpadev.fsba.loc,https://sbarpadev.fsba.loc,TBD,Contains Dev/Stage Control Room URL
+vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,TBD,Contains Dev/Stage Control Room URL
 vProdControlRoomURL,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,TBD,Contains Prod Control Room URL
 vRecoveryControlRoomURL,TBD,TBD,TBD,Contains Prod Control Room URL
 vPrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,File name of input file containing primary asset ids retrieved from Oracle database
@@ -13,8 +13,8 @@ vFileUploadWindowTitle,Open,Open,Open,Window Title of File explore window when B
 vGenericBatchTradeSuccessMessage,No errors. Ready for submission.,No errors. Ready for submission.,No errors. Ready for submission.,Success message when verify is clicked after attaching SecxRefTemplate in Generic Batch Trade 
 vSecurityIDType,SBA_PAID,SBA_PAID,SBA_PAID,SecurityIDType value to be populated in SecxRefTemplate
 vSecurityXRefType,BNYM_ID,BNYM_ID,BNYM_ID,SecurityXRefType value to be populated in SecxRefTemplate
-vUserStarID,Bot,Bot,Bot,UserStarID value to be populated in SecxRefTemplate
-vOracleConnectionString,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSTST/PMSTST,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSPROD/PMSPROD,TBD,Oracle database string to retrieve primary asset id data 
+vUserStarID,Bot,Bot,Bot,UserStarID value to be populated in SecxRefTemplate 
+vOracleConnectionString,Provider=OraOLEDB.Oracle.1;Persist Security Info=False;User ID=[FSBA];Data Source=PMSTST/PMSTST,Provider=OraOLEDB.Oracle;.1Persist Security Info=False;User ID=[FSBA];Data Source=PMSPROD/PMSPROD,TBD,Oracle database string to retrieve primary asset id data 
 vSQLQuery,"SELECT distinct SECURITYDBO.SECURITY_MASTER.PRIMARY_ASSET_ID
 FROM (RULESDBO.ENTITY_CUSTODY_RELATIONSHIP 
 INNER JOIN (ESTAR.ESTAR_COST_POSITION
@@ -133,8 +133,8 @@ vCurrentEnvironment,DEV,PROD,TBD,Current bot environment
 vProcessName,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,Name of process file in shared drive 
 vGBTErrorScreenshotName,GBTValidationError,GBTValidationError,GBTValidationError,Name of screenshot file when SecxRefTemplate does not pass verification in Generic Batch Trade
 vDevappsWindowTitle,tstapps,interchange,TBD,Window title of screenshot link in Generic Batch Trade 
-vEmailToAccounting,adam.lohne@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,Exceptions email list
-vEmailToRpaSupport,adam.lohne@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,Exceptions email list
+vEmailToAccounting,jason.verschage@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,Exceptions email list
+vEmailToRpaSupport,jason.verschage@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,Exceptions email list
 vEmailFrom,donotreply_SBA_BNYMid_bot@sbafla.com,donotreply_SBA_BNYMid_bot@sbafla.com,donotreply_SBA_BNYMid_bot@sbafla.com,Bot Sender Email
 vSuccessProcessCompleteEmail,"The BNYM ID Mapping process is complete 
 
