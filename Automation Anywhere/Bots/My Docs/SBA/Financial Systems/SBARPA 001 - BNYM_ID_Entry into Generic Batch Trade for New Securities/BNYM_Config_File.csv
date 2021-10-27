@@ -7,7 +7,7 @@ vPrimaryAssetDataPullFilePathSessionName,PrimaryAssetDataPullFileSession,Primary
 vSecxTemplateFileName,SecXRefTemplate,SecXRefTemplate,SecXRefTemplate,File name of output template file where the primary asset ids are populated and loaded into Generic Batch Trade site 
 vSecxTemplateSessionName,SecXRefTemplateSession,SecXRefTemplateSession,SecXRefTemplateSession,Excel Session for SecxRefTemplate
 vSecxTemplateTabName,XREF,XREF,XREF,Tab name of SecxRefTemplate where primary asset ids are populated 
-vSiteGenericBatchTrade,https://tstapps.sbafla.com/genericbatchtrade,https://interchange.sbafla.com/genericbatchtrade,TBD,"URL of Generic Batch Trade, where SecxRefTemplate is verified and submitted "
+vSiteGenericBatchTrade,https://devapps.sbafla.com/genericbatchtrade,https://interchange.sbafla.com/genericbatchtrade,TBD,"URL of Generic Batch Trade, where SecxRefTemplate is verified and submitted "
 vGenericBatchTradeWindowTitle,Generic Batch Trade,Generic Batch Trade,Generic Batch Trade,Window Title of Generic Batch Trade site 
 vFileUploadWindowTitle,Open,Open,Open,Window Title of File explore window when Browse button is  clicked in Generic Batch Trade 
 vGenericBatchTradeSuccessMessage,No errors. Ready for submission.,No errors. Ready for submission.,No errors. Ready for submission.,Success message when verify is clicked after attaching SecxRefTemplate in Generic Batch Trade 
