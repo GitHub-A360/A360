@@ -1,4 +1,4 @@
-TestList,sbarpabc1,sbarpabc2,sbarpabc3,sbarpaaccprd1,sbarpafinprd1,sbarparmcprd1,sbarpaacctst1,sbarpafintst1,sparpabrtst1
+TestList,sbarpabc1,sbarpabc2,sbarpabc3,sbarpaaccprd1,sbarpafinprd1,sbarparmcprd1,sbarpaacctst1,sbarpafintst1,sbarpabrtst1
 TestBrowserExternal,1,1,1,1,1,1,1,1,1
 TestBrowserInternal,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv,WorksmartBrowserInternal.csv
 TestBrowserInternal,DevGBCBrowserInternal.csv,DevGBCBrowserInternal.csv,0,0,ProdGBCBrowserInternal.csv,0,0,0,DevGBCBrowserInternal.csv
