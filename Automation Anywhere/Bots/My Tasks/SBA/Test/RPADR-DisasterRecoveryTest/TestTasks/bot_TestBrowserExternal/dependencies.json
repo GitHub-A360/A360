@@ -1,1 +1,1 @@
-{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Test\\RPADR-DisasterRecoveryTest\\TestTasks\\TestBrowserExternal","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\My Tasks\\SBA\\Shared\\BrowserLaunch"]}
+{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Test\\RPADR-DisasterRecoveryTest\\TestTasks\\TestBrowserExternal","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\Driver\\chromedriver.exe","Automation Anywhere\\Bots\\My Tasks\\SBA\\Shared\\BrowserLaunch"]}
