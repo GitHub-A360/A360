@@ -1,5 +1,5 @@
 REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
-vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/;https://sbarpabrtst1.fsba.loc/,https://sbarpacrtst.fsba.loc/,TBD,Contains Dev/Stage Control Room URL
+vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,TBD,Contains Dev/Stage Control Room URL
 vProdControlRoomURL,https://sbarpaprd.fsba.loc,https://sbarpaprd.fsba.loc,TBD,Contains Prod Control Room URL
 vRecoveryControlRoomURL,TBD,TBD,TBD,Contains Prod Control Room URL
 vPrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,PrimaryAssetDataPullFileName,File name of input file containing primary asset ids retrieved from Oracle database
