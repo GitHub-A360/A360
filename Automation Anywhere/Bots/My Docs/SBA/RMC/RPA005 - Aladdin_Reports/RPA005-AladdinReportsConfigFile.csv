@@ -11,7 +11,7 @@ vRPASupportEmail,"jason.verschage@sbafla.com",RPASupport@sbafla.com,RPASupport@s
 vProcessEmail,"jason.verschage@sbafla.com;jane.zody@sbafla.com;adam.lohne@sbafla.com;carolyn.walker@sbafla.com",PublicMarketCompliance@sbafla.com,PublicMarketCompliance@sbafla.com,
 vIMAPserver,mail.sbafla.com,mail.sbafla.com,mail.sbafla.com,
 vBlackrockUsername,sbjzody,sbjzody,TBD,
-vBlackrockPassword,RPAAladdin6!,RPAAladdin6!,RPAAladdin6!,
+vBlackrockPassword,RPAAladdin8!,RPAAladdin8!,RPAAladdin8!,
 vBlackrockExploreURL,https://www.blackrock.com/apps/explore,https://www.blackrock.com/apps/explore,https://www.blackrock.com/apps/explore,
 vBlackrockExploreFilename,SBARPA005-ExploreReport.xls,SBARPA005-ExploreReport.xls,SBARPA005-ExploreReport.xls,
 vSupportFiles,SupportFiles,SupportFiles,SupportFiles,
