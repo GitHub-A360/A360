@@ -133,8 +133,8 @@ vCurrentEnvironment,DEV,PROD,TBD,Current bot environment
 vProcessName,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,SBARPA 001 - BNYM_ID_Entry into Generic Batch Trade for New Securities,Name of process file in shared drive 
 vGBTErrorScreenshotName,GBTValidationError,GBTValidationError,GBTValidationError,Name of screenshot file when SecxRefTemplate does not pass verification in Generic Batch Trade
 vDevappsWindowTitle,tstapps,interchange,TBD,Window title of screenshot link in Generic Batch Trade 
-vEmailToAccounting,jason.verschage@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,Exceptions email list
-vEmailToRpaSupport,jason.verschage@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,Exceptions email list
+vEmailToAccounting,jason.verschage@sbafla.com;adam.lohne@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,AccountingInformationSystemsStaff@sbafla.com,Exceptions email list
+vEmailToRpaSupport,jason.verschage@sbafla.com;adam.lohne@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,Exceptions email list
 vEmailFrom,donotreply_SBA_BNYMid_bot@sbafla.com,donotreply_SBA_BNYMid_bot@sbafla.com,donotreply_SBA_BNYMid_bot@sbafla.com,Bot Sender Email
 vSuccessProcessCompleteEmail,"The BNYM ID Mapping process is complete 
 
