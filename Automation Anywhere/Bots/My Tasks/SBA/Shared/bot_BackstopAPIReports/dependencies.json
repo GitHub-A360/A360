@@ -1,1 +1,1 @@
-{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Shared\\BackstopAPIReports","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\My Docs\\SBA\\Accounting\\RPA006-MSR from Backstop\\MGRCHK_Base.txt"]}
+{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Shared\\BackstopAPIReports","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\My Tasks\\SBA\\Accounting\\RPA006-MSR from Backstop\\1.1.0 MSR from Backstop_ReadInputConfig","Automation Anywhere\\Bots\\My Docs\\SBA\\Accounting\\RPA006-MSR from Backstop\\MGRCHK_Base.txt"]}
