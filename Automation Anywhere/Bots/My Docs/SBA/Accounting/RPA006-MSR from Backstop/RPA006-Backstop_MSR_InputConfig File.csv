@@ -7,7 +7,7 @@ vCompletedByBot,\\sbafshare\RPA\DEV\Backstop\Process Shared Drive\MgrStmts\Compl
 vExceptionsFromBot,\\sbafshare\RPA\DEV\Backstop\Process Shared Drive\MgrStmts\Exceptions by Bot,\\sbafshare\account\PRIVATE EQUITY_STRATEGIC\RPA\Mgr Stmts\Exceptions by Bot,\\sbafshare\account\PRIVATE EQUITY_STRATEGIC\RPA\Mgr Stmts\Exceptions by Bot,Exception folders to move files in the input folder that are exception cases
 vPDF_AcctNo_Length,5,5,5,Length of account number value in PDF
 sBackstop_Username,RPABOTDEV,RPABOT,RPABOT
-sBackstop_Token,i6m/6XMg1UQH3bve+yEAzw==,,
+sBackstop_Token,7xSHSEkDt4Fd+H9Erc6fSw==,,
 sBackstop_Url,https://sbafla.backstopsolutions.com/backstop/api/reports,https://sbafla.backstopsolutions.com/backstop/api/reports,https://sbafla.backstopsolutions.com/backstop/api/reports
 vBackstopHome,https://sbafla.backstopsolutions.com/backstop,https://sbafla.backstopsolutions.com/backstop,https://sbafla.backstopsolutions.com/backstop,Home page URL for Backstop application
 vBackstop_RetryAttempts,3,3,3,Number of retry attempts for logging into backstop
