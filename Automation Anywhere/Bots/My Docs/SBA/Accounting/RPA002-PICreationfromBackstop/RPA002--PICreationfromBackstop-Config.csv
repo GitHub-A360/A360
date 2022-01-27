@@ -17,7 +17,7 @@ vProcessName,RPA002,RPA002,RPA002,Process name
 vProcessCutOffTime,16:30:00 PM,16:30,16:30,Process cut off time after which summary completion emails will be sent (every run)
 vEmailFrom,donotreply_SBA_BackstopPI_bot@sbafla.com,donotreply_SBA_BackstopPI_bot@sbafla.com,donotreply_SBA_BackstopPI_bot@sbafla.com,"Dummy email address for the Bot's ""From""field"
 vEmailToBusiness,jason.verschage@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com
-vEmailToRPASupport,jason.verschagee@sbafla.com,RPASupport@sbafla.com;,RPASupport@sbafla.com,RPA Support inbox for technical exception notifications
+vEmailToRPASupport,jason.verschage@sbafla.com,RPASupport@sbafla.com;,RPASupport@sbafla.com,RPA Support inbox for technical exception notifications
 vExceptionEmailNetworkDrive,"Hello, 
 
 Error: Bot unable to access Shared Drive
@@ -99,7 +99,6 @@ The Posting Instructions from Backstop bot was not completed successfully as the
 Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
 
 
-URL: <Backstop URL>
 Backstop ID: <Backstop Userid>
 
 Date and time: <Date / timestamp>
@@ -113,7 +112,6 @@ The Posting Instructions from Backstop bot was not completed successfully as the
 Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
 
 
-URL: <Backstop URL>
 Backstop ID: <Backstop Userid>
 
 Date and time: <Date / timestamp>
@@ -127,7 +125,6 @@ The Posting Instructions from Backstop bot was not completed successfully as the
 Please contact the RPA support group - RPASupport@sbafla.com for resolutions.
 
 
-URL: <Backstop URL>
 Backstop ID: <Backstop Userid>
 
 Date and time: <Date / timestamp>
