@@ -1,6 +1,6 @@
 REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,DISASTER RECOVERY REQUIRED VALUES,DESCRIPTION
 vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,Contains Dev/Stage Control Room URL
-vProdControlRoomURL,https://sbarpacrprd.fsba.loc,https://sbarpacrprd.fsba.loc,https://sbarpacrprd.fsba.loc,Contains Prod Control Room URL
+vProdControlRoomURL,https://sbarpacrprd.fsba.loc/,https://sbarpacrprd.fsba.loc/,https://sbarpacrprd.fsba.loc/,Contains Prod Control Room URL
 vRecoveryControlRoomURL,TBD,TBD,TBD,Contains DR Control Room URL
 vCurrentEnvironment,DEV,PROD,PROD,
 vProcessName,RPA005,RPA005,RPA005,
