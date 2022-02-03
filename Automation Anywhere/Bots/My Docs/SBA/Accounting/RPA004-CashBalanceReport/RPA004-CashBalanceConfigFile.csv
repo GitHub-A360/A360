@@ -1,13 +1,13 @@
 REQUIRED VARIABLES,DEV STAGE REQUIRED VALUES,PRODUCTION REQUIRED VALUES,PRODUCTION HOLD VALUES,DESCRIPTION
 vDevStageControlRoomURL,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,https://sbarpacrtst.fsba.loc/,Contains Dev/Stage Control Room URL
 vProdControlRoomURL,https://sbarpacrprd.fsba.loc/,https://sbarpacrprd.fsba.loc/,https://sbarpacrprd.fsba.loc/,Contains Prod Control Room URL
-vCurrentEnvironment,DEV,DEV,PROD,
+vCurrentEnvironment,DEV,PROD,PROD,
 vProcessName,RPA004,RPA004,RPA004,
 vEmailFrom,donotreply_SBA_Cash_Balance_Report_bot@sbafla.com,donotreply_SBA_Cash_Balance_Report_bot@sbafla.com,donotreply_SBA_Cash_Balance_Report_bot@sbafla.com,
-vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa,\\sbafshare\rpa_prod,
+vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa_prod,\\sbafshare\rpa_prod,
 vTargetEmailSubject,Cash Balance Report,Cash Balance Report,Cash Balance Report,
-vRPAsupportEmail,jason.verschage@sbafla.com,jason.verschage@sbafla.com;adam.lohne@sbafla.com,RPASupport@sbafla.com,
-vProcessEmail,jason.verschage@sbafla.com,jason.verschage@sbafla.com;adam.lohne@sbafla.com,sbafaccounting@sbafla.com;AccountingInformationSystemsStaff@sbafla.com,
+vRPAsupportEmail,jason.verschage@sbafla.com;adam.lohne@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,
+vProcessEmail,jason.verschage@sbafla.com;adam.lohne@sbafla.com,sbafaccounting@sbafla.com;AccountingInformationSystemsStaff@sbafla.com,jason.verschage@sbafla.com,
 vIncomingFileSharePath,\\sbafshare\testapps\ps_recon,\\sbafshare\liveapps\ps_recon,\\sbafshare\liveapps\ps_recon,
-vOutgoingFileSharePath,\\sbafshare\rpa\DEV\RPA004TempOutput,\\sbafshare\rpa\DEV\RPA004TempOutput,\\sbafshare\Account\PRIVATE EQUITY_STRATEGIC\0_Cash Rec Reports,
-vFileListFilename,RPA004-FileList-Test.csv,RPA004-FileList-Test.csv,RPA004-FileList-Prod.csv,
+vOutgoingFileSharePath,\\sbafshare\rpa\DEV\RPA004TempOutput,\\sbafshare\Account\PRIVATE EQUITY_STRATEGIC\0_Cash Rec Reports,\\sbafshare\Account\PRIVATE EQUITY_STRATEGIC\0_Cash Rec Reports,
+vFileListFilename,RPA004-FileList-Test.csv,RPA004-FileList-Prod.csv,RPA004-FileList-Prod.csv,
