@@ -1,1 +1,1 @@
-{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Accounting\\RPA006-MSR from Backstop\\1.1.1 MSR from Backstop_Create folder structure","manualDependencies":[],"scannedDependencies":[]}
+{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Accounting\\RPA006-MSR from Backstop\\1.1.1 MSR from Backstop_Create folder structure","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\My Tasks\\SBA\\Accounting\\RPA006-MSR from Backstop\\1.1.0 MSR from Backstop_ReadInputConfig"]}
