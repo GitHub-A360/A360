@@ -7,7 +7,7 @@ vCompletedByBot,\\sbafshare\RPA\DEV\Backstop\Process Shared Drive\Completed by B
 vExceptionsFromBot,\\sbafshare\RPA\DEV\Backstop\Process Shared Drive\Exceptions by Bot,\\sbafshare\account\PRIVATE EQUITY_STRATEGIC\RPA\Exceptions by Bot,\\sbafshare\account\PRIVATE EQUITY_STRATEGIC\RPA\Exceptions by Bot,Exception folders to move files in the input folder that are exception cases
 vPDF_AcctNo_Length,5,5,5,Length of account number value in PDF
 sBackstop_Username,RPABOTDEV,RPABOT,RPABOT
-sBackstop_Token,7xSHSEkDt4Fd+H9Erc6fSw==,,
+sBackstop_Token,7xSHSEkDt4Fd+H9Erc6fSw==,HSM/xZboRdEgsR7d7ZLZHw==,HSM/xZboRdEgsR7d7ZLZHw==
 sBackstop_Url,https://sbafla.backstopsolutions.com/backstop/api/reports,https://sbafla.backstopsolutions.com/backstop/api/reports,https://sbafla.backstopsolutions.com/backstop/api/reports
 vExceptionTransactionNumber,77260,77260,77260,Account number that is the exception used in PI file formatting rules
 vExcel_DefaultTabName,Export,Export,Export,TRSS Default Tab name (To be removed after validation)
