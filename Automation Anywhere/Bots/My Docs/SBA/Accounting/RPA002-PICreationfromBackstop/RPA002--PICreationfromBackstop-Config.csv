@@ -13,7 +13,7 @@ vExceptionTransactionNumber,77260,77260,77260,Account number that is the excepti
 vExcel_DefaultTabName,Export,Export,Export,TRSS Default Tab name (To be removed after validation)
 vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\RPA_Prod,\\sbafshare\RPA_Prod,Root folders used to build bot directories
 vCurrentEnvironment,DEV,PROD,PROD,Environment variable value used in folder directory build
-vProcessName,RPA002,RPA002,RPA002,Process name
+vProcessName,,SBARPA 002 - PI Creation from Backstop,,SBARPA 002 - PI Creation from Backstop,,SBARPA 002 - PI Creation from Backstop,Process name
 vProcessCutOffTime,16:30:00 PM,16:30,16:30,Process cut off time after which summary completion emails will be sent (every run)
 vEmailFrom,donotreply_SBA_BackstopPI_bot@sbafla.com,donotreply_SBA_BackstopPI_bot@sbafla.com,donotreply_SBA_BackstopPI_bot@sbafla.com,"Dummy email address for the Bot's ""From""field"
 vEmailToBusiness,jason.verschage@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com,sbafaccounting@sbafla.com
