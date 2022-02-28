@@ -1,5 +1,6 @@
 Dim SharepointAddress, LocalAddress, objNet, FS, colDrives, strDriveLetter, retValue
-
+Err.Clear
+On Error Resume Next
 'Incoming Variables from AA
 SharepointAddress = WScript.Arguments.Item(0)
 LocalAddress = WScript.Arguments.Item(1)
@@ -22,20 +23,25 @@ If colDrives.Count <> 0 Then
 		End If
 	Next
 End If
+
 'Map drive and copy file
 objNet.MapNetworkDrive "X:", SharepointAddress
+MsgBox("No Fail Yet 1")
 Set FS = CreateObject("Scripting.FileSystemObject")
+MsgBox("No Fail Yet 2")
 If FS.FileExists(LocalAddress) Then
 	Err.Clear
-	FS.CopyFile LocalAddress, "X:\"
-	If Err.Number <> 0 Then
-		retValue = "False"
+  	MsgBox(LocalAddress)
+	FS.CopyFile LocalAddress, "X:\"  
+	If Err.Number <> 0 Then    
+    	MsgBox(Err.Number)
+    	retValue = "False"
 		Err.Clear
 	End If
 Else
+  	MsgBox("No Fail Yet 4")  
 	retValue = "False"
 End If
-
 'Make sure the file is copied.
 WScript.sleep 5
 objNet.RemoveNetworkDrive "X:"
@@ -44,4 +50,7 @@ WScript.sleep 5
 Set objNet = Nothing
 Set wshNet = Nothing
 Set FS = Nothing
+If Err.Number <> 0 Then
+
+End If
 WScript.StdOut.Write(retValue)
