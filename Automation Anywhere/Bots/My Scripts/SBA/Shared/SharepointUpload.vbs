@@ -26,20 +26,15 @@ End If
 
 'Map drive and copy file
 objNet.MapNetworkDrive "X:", SharepointAddress
-MsgBox("No Fail Yet 1")
 Set FS = CreateObject("Scripting.FileSystemObject")
-MsgBox("No Fail Yet 2")
 If FS.FileExists(LocalAddress) Then
 	Err.Clear
-  	MsgBox(LocalAddress)
 	FS.CopyFile LocalAddress, "X:\"  
 	If Err.Number <> 0 Then    
-    	MsgBox(Err.Number)
     	retValue = "False"
 		Err.Clear
 	End If
 Else
-  	MsgBox("No Fail Yet 4")  
 	retValue = "False"
 End If
 'Make sure the file is copied.
