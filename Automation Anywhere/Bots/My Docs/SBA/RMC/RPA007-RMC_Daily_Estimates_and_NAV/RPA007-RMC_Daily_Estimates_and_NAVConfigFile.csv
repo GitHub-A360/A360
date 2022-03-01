@@ -8,7 +8,7 @@ vEmailFrom,donotreply_RPA007_bot@sbafla.com,donotreply_RPA007_bot@sbafla.com,don
 vRPAFolderPath,\\sbafshare\RPA,\\sbafshare\rpa_prod,\\sbafshare\RPA\Recovery,
 vRPASupportEmail,jason.verschage@sbafla.com,RPASupport@sbafla.com,RPASupport@sbafla.com,
 vIMAPserver,mail.sbafla.com,mail.sbafla.com,mail.sbafla.com,
-vSharePointDailyReportUrl,https://worksmart.sbafla.com/sites/it/appdev/RPA%20Site%20Testing/,https://worksmart.sbafla.com/sites/riskcomp/pra/Reporting/Daily/,https://worksmart.sbafla.com/sites/riskcomp/pra/Reporting/Daily/,
+vSharePointDailyReportUrl,https://worksmart.sbafla.com/sites/riskcomp/pra/Reporting/Daily/IT_Test/,https://worksmart.sbafla.com/sites/riskcomp/pra/Reporting/Daily/,https://worksmart.sbafla.com/sites/riskcomp/pra/Reporting/Daily/,
 vChangeInNavExcelFilename,Change in NAV Report.xlsm,Change in NAV Report.xlsm,Change in NAV Report.xlsm,
 vFrsPerformanceExcelFilename,FRS Defined Benefit Performance Estimates.xlsm,FRS Defined Benefit Performance Estimates.xlsm,FRS Defined Benefit Performance Estimates.xlsm,
 vFinalOutputFileDirectory,https://worksmart.sbafla.com/sites/it/appdev/RPATest,https://worksmart.sbafla.com/Performance,https://worksmart.sbafla.com/Performance/,
