@@ -1,1 +1,1 @@
-{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Financial Operations\\RPA003 - PI to Eagle\\1.1.1 CreateValidateFolderStructure","manualDependencies":[],"scannedDependencies":[]}
+{"path":"Automation Anywhere\\Bots\\My Tasks\\SBA\\Financial Operations\\RPA003 - PI to Eagle\\1.1.1 CreateValidateFolderStructure","manualDependencies":[],"scannedDependencies":["Automation Anywhere\\Bots\\My Tasks\\SBA\\Financial Operations\\RPA003 - PI to Eagle\\1.1.0 Read_Input_Config"]}
